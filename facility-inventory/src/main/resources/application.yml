@@ -1,21 +1,14 @@
-spring:
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: https://sts.windows.net/36e902d6-0a6f-4ec9-9067-297246dd99f8/
-      client:
-        registration:
-          facility-inventory:
-            client-name: facility-inventory
-            client-id: b7d58b57-a71f-4115-b501-fa84647200a6
-            client-secret: S-a18kTmeCFE0b2S_wtf9.psA.q7PhtkQ~
-            scope: api://hr/HealthInformation:Read
-            authorization-grant-type: client_credentials
-            provider: azure
-        provider:
-          azure:
-            issuer-uri: https://login.microsoftonline.com/36e902d6-0a6f-4ec9-9067-297246dd99f8/v2.0
+azure:
+  activedirectory:
+    tenant-id: 36e902d6-0a6f-4ec9-9067-297246dd99f8
+    client-id: b7d58b57-a71f-4115-b501-fa84647200a6
+    client-secret: S-a18kTmeCFE0b2S_wtf9.psA.q7PhtkQ~
+    app-id-uri: api://facility-inventory
+    authorization-clients:
+      facility-inventory:
+        authorization-grant-type: on_behalf_of
+        scopes: api://hr/HealthInformation:Read
+
 server:
   port: 8881
 

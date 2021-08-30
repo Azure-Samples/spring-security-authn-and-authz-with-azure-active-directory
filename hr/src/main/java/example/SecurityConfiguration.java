@@ -30,7 +30,7 @@ public class SecurityConfiguration {
 		// @formatter:off
 		http
 			.authorizeRequests((authorize) -> authorize
-				.mvcMatchers("/healthInformation").hasAuthority("SCOPE_api://hr/HealthInformation:Read")
+				.mvcMatchers("/healthInformation").hasAuthority("SCOPE_HealthInformation:Read")
 				.anyRequest().authenticated())
 			.oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt);
 		// @formatter:on

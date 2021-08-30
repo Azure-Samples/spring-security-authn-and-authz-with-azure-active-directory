@@ -14,6 +14,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework:spring-webflux'
 	implementation 'io.projectreactor.netty:reactor-netty'
+	implementation 'com.azure.spring:azure-spring-boot-starter-active-directory:3.7.0'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
