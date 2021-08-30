@@ -8,19 +8,14 @@ logging:
 spring:
   thymeleaf:
     cache: false
-  security:
-    oauth2:
-      client:
-        registration:
-          facility-request:
-            client-name: facility-request
-            client-id: 87fe78e0-ad84-42cf-a55e-309e110e40e8
-            client-secret: 7nLmy2s.5Pv3-hEXvMbQtg-~5V3_Z0E6VK
-            scope: openid, profile, offline_access, api://facility-inventory/Facility.Read, api://facility-inventory/Facility.Write
-            provider: azure
-        provider:
-          azure:
-            issuer-uri: https://login.microsoftonline.com/36e902d6-0a6f-4ec9-9067-297246dd99f8/v2.0
+azure:
+  activedirectory:
+    client-id: 87fe78e0-ad84-42cf-a55e-309e110e40e8
+    client-secret: 7nLmy2s.5Pv3-hEXvMbQtg-~5V3_Z0E6VK
+    tenant-id: 36e902d6-0a6f-4ec9-9067-297246dd99f8
+    authorization-clients:
+      facility-request:
+        scopes: openid, profile, offline_access, api://facility-inventory/Facility.Read, api://facility-inventory/Facility.Write
 server:
   port: 8880
 
