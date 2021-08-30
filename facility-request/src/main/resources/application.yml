@@ -20,7 +20,7 @@ spring:
             provider: azure
         provider:
           azure:
-            issuer-uri: http://auth-server:9000
+            issuer-uri: https://login.microsoftonline.com/36e902d6-0a6f-4ec9-9067-297246dd99f8/v2.0
 server:
   port: 8880
 
