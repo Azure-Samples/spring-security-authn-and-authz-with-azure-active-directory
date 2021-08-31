@@ -32,6 +32,7 @@ public class SecurityConfiguration extends AADWebSecurityConfigurerAdapter {
 		http
 			.authorizeRequests((authorize) -> authorize
 				.antMatchers("/").permitAll()
+				.antMatchers("/requestStandingDesk").hasAuthority("APPROLE_role1")
 				.anyRequest().authenticated()
 			)
 			.oauth2Login(Customizer.withDefaults());
