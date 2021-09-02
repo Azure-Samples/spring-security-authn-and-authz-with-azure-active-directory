@@ -1,0 +1,22 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://auth-server:9000
+      client:
+        registration:
+          facility-inventory:
+            client-name: facility-inventory
+            client-id: b7d58b57-a71f-4115-b501-fa84647200a6
+            client-secret: S-a18kTmeCFE0b2S_wtf9.psA.q7PhtkQ~
+            scope: api://hr/HealthInformation:Read
+            authorization-grant-type: client_credentials
+            provider: azure
+        provider:
+          azure:
+            issuer-uri: http://auth-server:9000
+server:
+  port: 8881
+
+hr-base-url: ${HR_BASE_URL:http://localhost:8882}

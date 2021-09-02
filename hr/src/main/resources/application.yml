@@ -1,0 +1,12 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://auth-server:9000
+server:
+  port: 8882
+
+logging:
+  level:
+    org.springframework.security: TRACE

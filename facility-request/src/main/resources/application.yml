@@ -1,0 +1,27 @@
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+#    org.springframework.boot.autoconfigure: DEBUG
+
+spring:
+  thymeleaf:
+    cache: false
+  security:
+    oauth2:
+      client:
+        registration:
+          facility-request:
+            client-name: facility-request
+            client-id: 87fe78e0-ad84-42cf-a55e-309e110e40e8
+            client-secret: 7nLmy2s.5Pv3-hEXvMbQtg-~5V3_Z0E6VK
+            scope: openid, profile, offline_access, api://facility-inventory/Facility.Read, api://facility-inventory/Facility.Write
+            provider: azure
+        provider:
+          azure:
+            issuer-uri: http://auth-server:9000
+server:
+  port: 8880
+
+facility-inventory-base-url: ${FACILITY_INVENTORY_BASE_URL:http://localhost:8881}

@@ -1,0 +1,19 @@
+pluginManagement {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+        maven { url "https://repo.spring.io/libs-snapshot" }
+    }
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.id == "io.spring.javaformat") {
+                useModule "io.spring.javaformat:spring-javaformat-gradle-plugin:${requested.version}"
+            }
+        }
+    }
+}
+
+include ":spring-authorization-server"
+include ":facility-request"
+include ":facility-inventory"
+include ":hr"
